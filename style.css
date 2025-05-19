@@ -37,3 +37,28 @@ html, body {
     border-radius: 10px;
     background-color: rgb(124, 145, 190)
 }
+
+#title-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#title-page > * {
+    position: relative;
+    margin-top: 2vh;
+}
+
+#title-page > button {
+    width: 30vw;
+    height: 5vh;
+    font-size: 1em;
+    text-align: center;
+    top:-4vh;
+}
+
+#title-page > img {
+    height: 30vh;
+}
