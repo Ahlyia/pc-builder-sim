@@ -4,6 +4,8 @@ html, body {
 
     display: flex;
     justify-content: center;
+
+    overflow-y: hidden;
 }
 
 #head-bar{
@@ -31,11 +33,12 @@ html, body {
 .screenType {
     border: 1px solid rgb(144, 153, 181);
     height: 80vh;
-    top:15vh;
+    top: 15vh;
     position: absolute;
     width: 95vw;
     border-radius: 10px;
-    background-color: rgb(124, 145, 190)
+    background-color: rgb(124, 145, 190);
+    box-sizing: border-box;
 }
 
 #title-page {
