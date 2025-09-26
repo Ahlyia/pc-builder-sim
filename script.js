@@ -18,7 +18,9 @@ var screens = {
     "egulf": null,
 }
 
-
+function attemptPurchase(){
+    
+}
 
 function openWindow(windowName){
     for(let key in screens){
