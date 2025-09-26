@@ -18,6 +18,8 @@ var screens = {
     "egulf": null,
 }
 
+
+
 function openWindow(windowName){
     for(let key in screens){
         let screen = screens[key]
