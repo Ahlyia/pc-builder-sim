@@ -93,7 +93,9 @@ html, body {
 
     border-radius: 10px;
 
-    overflow: hidden;
+    overflow-x: hidden;
+
+    font-size: 1vw;
 }
 #shop-inspector-icon{
     position: relative;
@@ -101,7 +103,7 @@ html, body {
     top: 3vw;
 
     aspect-ratio: 1;
-    width:clamp(50px,150px,60%);
+    width:clamp(5px,60%,150px);
     background-color:white;
 
     justify-self: center;
@@ -112,12 +114,19 @@ html, body {
     font-family:'Courier New', Courier, monospace;
     left: clamp(0px, 5px, 10px);
 
-    top: 2vw;
+    top: -2vw;
 
     height: 10vh;
 
     overflow: visible;
     white-space: normal;
+}
+#shop-product-name{
+    top:2vw;
+}
+#shop-product-price{
+    top:1vw;
+    margin:0;
 }
 
 #title-page > img {
