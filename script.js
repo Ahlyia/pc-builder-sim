@@ -30,14 +30,16 @@ function openWindow(windowName){
 }
 
 function ready(){
+    screens.shop.hidden = false;
+    screens.title.hidden = true;
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
     screens.title = document.getElementById("title-page");
     screens.shop = document.getElementById("shop-page-main");
     screens.inventory_parts = document.getElementById("inventory-page-parts");
     screens.inventory_builds = document.getElementById("inventory-page-builds");
     screens.egulf = document.getElementById("offers-page");
     screens.build = document.getElementById("build-page");
-}
-
-document.addEventListener("DOMContentLoaded",()=>{
     ready();
 });

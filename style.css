@@ -62,6 +62,72 @@ html, body {
     top:-4vh;
 }
 
+#shop-page-main{
+    background-color:white;
+}
+#shop-scroller{
+    display: inline-block;
+    position:relative;
+    background-color: rgb(200, 200, 200);
+    width: 65%;
+    height: 80%;
+    left:clamp(5px,20px,5vw);
+    top: clamp(5px,20px,5vh);
+
+    border-radius: 10px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#shop-inspector{
+    display: grid;
+    justify-items: center;
+
+    position: absolute;
+    background-color: rgb(200,200,200);
+    width: 25%;
+    height: 80%;
+
+    right: clamp(5px,20px,5vw);
+    top: clamp(5px,20px,5vh);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+#shop-inspector-icon{
+    position: relative;
+    
+    top: 3vw;
+
+    aspect-ratio: 1;
+    width:clamp(50px,150px,60%);
+    background-color:white;
+
+    justify-self: center;
+}
+.shop-inspector-info{
+    position: relative;
+    color: rgb(69, 69, 69);
+    font-family:'Courier New', Courier, monospace;
+    left: clamp(0px, 5px, 10px);
+
+    top: 2vw;
+
+    height: 10vh;
+
+    overflow: visible;
+    white-space: normal;
+}
+
 #title-page > img {
     height: 30vh;
+}
+#money-display {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(22, 123, 37);
+    -webkit-text-stroke: 1px rgb(55, 201, 57);
+    bottom: 5vh;
+    left: 5vw;
 }
