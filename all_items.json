@@ -17,7 +17,7 @@
     "Motherboards": [
         {
             "name": "SASUS dA22M",
-            "cpuTransform": {
+            "CPUTransform": {
                 "x": 0.26,
                 "y": 0.1133,
                 "size": 0.2733,
@@ -45,6 +45,14 @@
                     "rotation": 0
                 }
             ],
+            "SSDTransforms": [
+                {
+                    "x": 0.2366,
+                    "y": 0.4466,
+                    "size": 0.7812,
+                    "rotation": 0
+                }
+            ],
             "price": 20,
             "id": 2,
             "sprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/sasus_dA22M.png?raw=true"
@@ -53,6 +61,6 @@
     "PSUs": [],
     "CPUs": [],
     "RAM": [],
-    "Storages": [],
+    "SSDs": [],
     "GPUs": []
 }

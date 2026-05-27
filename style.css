@@ -78,6 +78,8 @@ html, body {
 
     overflow-x: hidden;
     overflow-y: scroll;
+
+    /* padding: clamp(5px, 5vw, 20px); */
 }
 #shop-inspector{
     display: grid;
@@ -104,6 +106,9 @@ html, body {
 
     aspect-ratio: 1;
     width:clamp(5px,60%,150px);
+
+    object-fit: contain;
+
     background-color:white;
 
     justify-self: center;
@@ -155,6 +160,26 @@ html, body {
     font-size: 3vh;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
+}
+
+#shop-category {
+    position: relative;
+    left: clamp(5px, 5vw, 20px);
+
+    color: white;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px black;
+}
+
+.shop-item {
+    width: clamp(32px, 15vw, 100px);
+    height: clamp(32px, 15vw, 100px);
+
+    object-fit: contain;
+
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid rgb(124, 145, 190);
 }
 
 #title-page > img {

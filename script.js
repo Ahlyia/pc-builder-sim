@@ -1,3 +1,5 @@
+var ITEMS = null;
+
 var money = 0;
 
 var inventory = {
@@ -8,6 +10,8 @@ var inventory = {
         
     }
 }
+
+
 
 var screens = {
     "title": null,
@@ -24,12 +28,41 @@ function attemptPurchase(){
 
 function openWindow(windowName){
     for(let key in screens){
-        let screen = screens[key]
+        let screen = screens[key];
         if (key == windowName) {
-            screen.hidden = false
+            screen.hidden = false;
         } else {
-            screen.hidden = true
+            screen.hidden = true;
         }
+    }
+}
+
+function loadShop(){
+    populateCategory("Cases", "shop-cases");
+    populateCategory("Motherboards","shop-motherboards");
+}
+
+function inspectItem(){
+
+}
+
+function populateCategory(categoryName, elementId){
+    const container = document.getElementById(elementId);
+
+    container.innerHTML = "";
+
+    for(const item of ITEMS[categoryName]){
+        const itemIcon = document.createElement("img");
+        itemIcon.className = "shop-item";
+        itemIcon.onclick = () => inspectItem(item);
+
+        if(categoryName == "Cases") {
+            itemIcon.src = item.frontSprite;
+        } else {
+            itemIcon.src = item.sprite;
+        }
+
+        container.appendChild(itemIcon);
     }
 }
 
@@ -38,12 +71,25 @@ function ready(){
     screens.title.hidden = true;
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
+async function loadItems(){
+    const response = await fetch("all_items.json");
+
+    ITEMS = await response.json();
+
+    console.log(ITEMS);
+}
+
+document.addEventListener("DOMContentLoaded",async ()=>{
     screens.title = document.getElementById("title-page");
     screens.shop = document.getElementById("shop-page-main");
     screens.inventory_parts = document.getElementById("inventory-page-parts");
     screens.inventory_builds = document.getElementById("inventory-page-builds");
     screens.egulf = document.getElementById("offers-page");
     screens.build = document.getElementById("build-page");
+
+    await loadItems();
+
+    loadShop();
+
     ready();
 });
