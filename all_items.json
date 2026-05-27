@@ -1,5 +1,55 @@
 {
-    "Cases": [],
+    "Cases": [
+        {
+            "name": "Generik T200",
+            "motherboardTransform": {
+                "x": 0.1183,
+                "y": 0.1287,
+                "size": 0.5,
+                "rotation": 0
+            },
+            "price": 15,
+            "id": 1,
+            "backSprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/generikt200_back.png?raw=true",
+            "frontSprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/generikt200_front.png?raw=true"
+        }
+    ],
+    "Motherboards": [
+        {
+            "name": "SASUS dA22M",
+            "cpuTransform": {
+                "x": 0.26,
+                "y": 0.1133,
+                "size": 0.2733,
+                "rotation": 0
+            },
+            "RAMTransforms": [
+                {
+                    "x": 0.6966,
+                    "y": 0.2566,
+                    "size": 0.7656,
+                    "rotation": 0
+                },
+                {
+                    "x": 0.86,
+                    "y": 0.2566,
+                    "size": 0.7656,
+                    "rotation": 0
+                }
+            ],
+            "GPUTransforms": [
+                {
+                    "x": 0.1033,
+                    "y": 0.55,
+                    "size": 0.5195,
+                    "rotation": 0
+                }
+            ],
+            "price": 20,
+            "id": 2,
+            "sprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/sasus_dA22M.png?raw=true"
+        }
+    ],
     "PSUs": [],
     "CPUs": [],
     "RAM": [],
