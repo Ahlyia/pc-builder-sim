@@ -1,6 +1,7 @@
 var ITEMS = null;
 
 var money = 0;
+var currentInspectingItem = null;
 
 var inventory = {
     "builds": {
@@ -42,8 +43,23 @@ function loadShop(){
     populateCategory("Motherboards","shop-motherboards");
 }
 
-function inspectItem(){
+function inspectItem(item){
+    currentInspectingItem = item;
 
+    const nameElement = document.getElementById("shop-product-name");
+    const descElement = document.getElementById("shop-product-desc");
+    const priceElement = document.getElementById("shop-product-price");
+    const iconElement = document.getElementById("shop-inspector-icon");
+
+    nameElement.textContent = item.name;
+    descElement.textContent = item.description;
+    priceElement.textContent = "$"+item.price;
+
+    if(item.type == "Case"){
+        iconElement.src = item.backSprite;
+    } else {
+        iconElement.src = item.sprite;
+    }
 }
 
 function populateCategory(categoryName, elementId){

@@ -11,7 +11,9 @@
             "price": 15,
             "id": 1,
             "backSprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/generikt200_back.png?raw=true",
-            "frontSprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/generikt200_front.png?raw=true"
+            "frontSprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/generikt200_front.png?raw=true",
+            "description": "Pretty much the oldest, most rubbish case you can find on the internet. Maybe reliable?! Atleast it works!",
+            "type": "Case"
         }
     ],
     "Motherboards": [
@@ -55,7 +57,8 @@
             ],
             "price": 20,
             "id": 2,
-            "sprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/sasus_dA22M.png?raw=true"
+            "sprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/sasus_dA22M.png?raw=true",
+            "description": "The slowest motherboard we could find across the entire interwebs. Let's hope it does you justice!"
         }
     ],
     "PSUs": [],
