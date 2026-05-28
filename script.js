@@ -42,6 +42,7 @@ function attemptPurchase(){
             money -= currentInspectingItem.price;
             inventory.parts.push(structuredClone(currentInspectingItem));
 
+            PURCHASESOUND.load();
             PURCHASESOUND.play();
         } else {
             purchaseDebounce = true;
