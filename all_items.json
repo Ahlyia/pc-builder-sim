@@ -62,9 +62,54 @@
             "type": "Motherboard"
         }
     ],
-    "PSUs": [],
-    "CPUs": [],
-    "RAM": [],
-    "SSDs": [],
-    "GPUs": []
+    "PSUs": [
+        {
+            "name": "PowerMaster 250w Bronze",
+            "price": 20,
+            "id": 3,
+            "sprite": "assets/powermaster250wBronze.png",
+            "description": "The cheapest PSU you could find. But as always, it works.. Maybe not for long though lol",
+            "type": "PSU"
+        }
+    ],
+    "CPUs": [
+        {
+            "name": "bintel i1-200",
+            "price": 10,
+            "id": 4,
+            "sprite": "assets/binteli1-200.png",
+            "description": "Rocking only 1 core and 2 threads, 1.50hz this thing is a BEAST... at running Assembly...",
+            "type": "CPU"
+        }
+    ],
+    "RAM": [
+        {
+            "name": "bintel Generic DDR2 400Mhz",
+            "price": 5,
+            "id": 5,
+            "sprite": "assets/bintel_generic_ddr2_400Mhz.png",
+            "description": "Literally the slowest RAM of the modern era.",
+            "type": "RAM"
+        }
+    ],
+    "SSDs": [
+        {
+            "name": "64gb M.2 Drive",
+            "price": 15,
+            "id": 6,
+            "sprite": "assets/64gbM.2.png",
+            "description": "Only holds 64gb!! Beggars can't be choosers. Atleast it works.",
+            "type": "SSD"
+        }
+    ],
+    "GPUs": [
+        {
+            "name": "MBIDIO 220",
+            "price": 15,
+            "id": 7,
+            "sprite": "assets/green_slab_that_is_a_gpu.png",
+            "description": "The oldest generations of GPU. This thing MAYBE runs DOOM...",
+            "type": "GPU"
+        }
+    ]
 }

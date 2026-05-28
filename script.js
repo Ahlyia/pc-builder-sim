@@ -87,7 +87,21 @@ function openWindow(windowName){
     update();
 }
 
+function unloadInventory(){
+    const inventoryParts = document.getElementsByClassName("inventory-item");
+    const inventoryBuilds = document.getElementsByClassName("inventory-build");
+
+    Array.from(inventoryParts).forEach((partIcon) => {
+        partIcon.remove();
+    });
+    Array.from(inventoryBuilds).forEach((buildIcon) => {
+        buildIcon.remove();
+    });
+}
+
 function loadInventory(){
+    unloadInventory();
+
     const partsContainer = document.getElementById("inventory-parts");
     const buildsContainer = document.getElementById("inventory-builds");
 
@@ -110,6 +124,11 @@ function loadInventory(){
 function loadShop(){
     populateCategory("Cases", "shop-cases");
     populateCategory("Motherboards","shop-motherboards");
+    populateCategory("PSUs","shop-PSU");
+    populateCategory("GPUs","shop-GPU");
+    populateCategory("CPUs","shop-CPU");
+    populateCategory("RAM","shop-RAM");
+    populateCategory("SSDs","shop-storage")
 }
 
 function inspectItem(item){
