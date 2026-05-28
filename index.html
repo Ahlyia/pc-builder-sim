@@ -12,37 +12,38 @@
         <div id="title-page" class="screenType" hidden="true">
             <img src="https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/Homerig.png?raw=true">
             <button id="offers" onclick="openWindow('egulf')">EGulf</button>
-            <button id="inventory" onclick="openWindow('inventory_parts');">Inventory</button>
+            <button id="inventory" onclick="openWindow('inventory');">Inventory</button>
             <button id="shop" onclick="openWindow('shop');">Shop</button>
             <button id="build" onclick="openWindow('build')">Build</button>
+            <button id="data" onclick="openWindow('data')">Data</button>
         </div>
         <div id="shop-page-main" hidden="false" class="screenType">
             <div id="shop-scroller">
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>Cases</h2>
                     <div id="shop-cases"></div>
                 </div>
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>Motherboards</h2>
                     <div id="shop-motherboards"></div>
                 </div>
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>Central Processing Units</h2>
                     <div id="shop-CPUs"></div>
                 </div>
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>Graphics Processing Units</h2>
                     <div id="shop-GPUs"></div>
                 </div>
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>RAM Sticks</h2>
                     <div id="shop-RAM"></div>
                 </div>
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>Power Supplies</h2>
                     <div id="shop-PSU"></div>
                 </div>
-                <div id="shop-category">
+                <div class="shop-category">
                     <h2>SSD Cards</h2>
                     <div id="shop-storage"></div>
                 </div>
@@ -56,10 +57,29 @@
             <button id="shop-return-home" onclick="openWindow('title')">BACK</button>
             <button id="shop-purchase" onclick="attemptPurchase()">Purchase</button>
         </div>
-        <div id="inventory-page-builds" hidden="true" class="screenType"></div>
-        <div id="inventory-page-parts" hidden="true" class="screenType"></div>
-        <div id="build-page" hidden="true" class="screenType"></div>
-        <div id="offers-page" hidden="true" class="screenType"></div>
+        <div id="inventory-page" hidden="true" class="screenType">
+            <div id="inventory-scroller">
+                <div class="inventory-category">
+                    <h2>Builds</h2>
+                    <div id="inventory-builds" class="inventory-category-container"></div>
+                </div>
+                <div class="inventory-category">
+                    <h2>Parts</h2>
+                    <div id="inventory-parts" class="inventory-category-container"></div>
+                </div>
+            </div>
+            
+            <button id="shop-return-home" onclick="openWindow('title')">BACK</button>
+        </div>
+        <div id="build-page" hidden="true" class="screenType">
+            <button id="shop-return-home" onclick="openWindow('title')">BACK</button>
+        </div>
+        <div id="offers-page" hidden="true" class="screenType">
+            <button id="shop-return-home" onclick="openWindow('title')">BACK</button>
+        </div>
+        <div id="data-page" hidden="true" class="screenType">
+            <button id="shop-return-home" onclick="openWindow('title')">BACK</button>
+        </div>
         <h1 id="money-display">$0</h1>
     </body>
     <script src="script.js"></script>

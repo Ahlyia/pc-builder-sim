@@ -58,7 +58,8 @@
             "price": 20,
             "id": 2,
             "sprite": "https://github.com/Ahlyia/pc-builder-sim/blob/main/assets/sasus_dA22M.png?raw=true",
-            "description": "The slowest motherboard we could find across the entire interwebs. Let's hope it does you justice!"
+            "description": "The slowest motherboard we could find across the entire interwebs. Let's hope it does you justice!",
+            "type": "Motherboard"
         }
     ],
     "PSUs": [],

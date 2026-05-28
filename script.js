@@ -1,30 +1,73 @@
 var ITEMS = null;
 
-var money = 0;
+const ERRORSOUND = new Audio("assets/error.mp3");
+const PURCHASESOUND = new Audio("assets/purchase.mp3");
+
+var money = 100;
 var currentInspectingItem = null;
 
 var inventory = {
-    "builds": {
+    "builds": [
 
-    },
-    "parts": {
-        
-    }
+    ],
+    "parts": [
+
+    ]
 }
-
-
 
 var screens = {
     "title": null,
     "shop": null,
-    "inventory_parts": null,
-    "inventory_builds": null,
+    "inventory": null,
     "build": null,
     "egulf": null,
+    "data": null,
+}
+
+var purchaseDebounce = false;
+
+function update(){
+    const moneyDisplay = document.getElementById("money-display");
+
+    moneyDisplay.textContent = "$"+money;
 }
 
 function attemptPurchase(){
-    
+    const purchaseButtonElement = document.getElementById("shop-purchase");
+
+    if(purchaseDebounce) return;
+
+    if (currentInspectingItem) {
+        if (money >= currentInspectingItem.price) {
+            money -= currentInspectingItem.price;
+            inventory.parts.push(structuredClone(currentInspectingItem));
+
+            PURCHASESOUND.play();
+        } else {
+            purchaseDebounce = true;
+            purchaseButtonElement.classList.add("somethingwrong");
+            purchaseButtonElement.textContent = "Insufficient Funds!";
+            ERRORSOUND.play();
+            setTimeout(() => {
+                purchaseButtonElement.classList.remove("somethingwrong");
+                purchaseButtonElement.textContent = "Purchase";
+                purchaseDebounce = false;
+            },2000);
+        }
+    } else {
+        purchaseButtonElement.classList.add("somethingwrong");
+        purchaseButtonElement.textContent = "No item!";
+        ERRORSOUND.play();
+        purchaseDebounce = true;
+        setTimeout(() => {
+            purchaseButtonElement.classList.remove("somethingwrong");
+            purchaseButtonElement.textContent = "Purchase";
+            purchaseDebounce = false;
+        },2000);
+    }
+    update();
+
+    console.log(inventory);
 }
 
 function openWindow(windowName){
@@ -32,10 +75,35 @@ function openWindow(windowName){
         let screen = screens[key];
         if (key == windowName) {
             screen.hidden = false;
+
+            if(windowName == "inventory") {
+                loadInventory();
+            }
         } else {
             screen.hidden = true;
         }
     }
+    update();
+}
+
+function loadInventory(){
+    const partsContainer = document.getElementById("inventory-parts");
+    const buildsContainer = document.getElementById("inventory-builds");
+
+    inventory.builds.forEach((build) => {
+        // TODO PLEASE DO THIS PLEASSEE
+    });
+
+    inventory.parts.forEach((part) => {
+        const partIcon = document.createElement("img");
+        partsContainer.appendChild(partIcon);
+        partIcon.className = "inventory-item";
+        if(part.frontSprite) {
+            partIcon.src = part.frontSprite;
+        } else {
+            partIcon.src = part.sprite;
+        }
+    });
 }
 
 function loadShop(){
@@ -55,11 +123,12 @@ function inspectItem(item){
     descElement.textContent = item.description;
     priceElement.textContent = "$"+item.price;
 
-    if(item.type == "Case"){
+    if(item.backSprite){
         iconElement.src = item.backSprite;
     } else {
         iconElement.src = item.sprite;
     }
+    update();
 }
 
 function populateCategory(categoryName, elementId){
@@ -83,8 +152,10 @@ function populateCategory(categoryName, elementId){
 }
 
 function ready(){
-    screens.shop.hidden = false;
-    screens.title.hidden = true;
+    /*screens.shop.hidden = false;
+    screens.title.hidden = true;*/
+
+    update();
 }
 
 async function loadItems(){
@@ -95,13 +166,13 @@ async function loadItems(){
     console.log(ITEMS);
 }
 
-document.addEventListener("DOMContentLoaded",async ()=>{
+document.addEventListener("DOMContentLoaded",async ()=> {
     screens.title = document.getElementById("title-page");
     screens.shop = document.getElementById("shop-page-main");
-    screens.inventory_parts = document.getElementById("inventory-page-parts");
-    screens.inventory_builds = document.getElementById("inventory-page-builds");
+    screens.inventory = document.getElementById("inventory-page");
     screens.egulf = document.getElementById("offers-page");
     screens.build = document.getElementById("build-page");
+    screens.data = document.getElementById("data-page");
 
     await loadItems();
 

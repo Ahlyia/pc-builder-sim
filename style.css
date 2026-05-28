@@ -62,6 +62,36 @@ html, body {
     top:-4vh;
 }
 
+#inventory-page {
+    background-color: white;
+}
+
+#inventory-scroller{
+    display: inline-block;
+    position:relative;
+    background-color: rgb(200, 200, 200);
+    width: 65%;
+    height: 80%;
+    left:clamp(5px,5vw,20px);
+    top: clamp(5px,5vh,20px);
+
+    border-radius: 10px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    /* padding: clamp(5px, 5vw, 20px); */
+}
+
+.inventory-category {
+    position: relative;
+    left: clamp(5px, 5vw, 20px);
+
+    color: white;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px black;
+}
+
 #shop-page-main{
     background-color:white;
 }
@@ -149,6 +179,11 @@ html, body {
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
 }
+
+#shop-purchase.somethingwrong {
+    background-color: red;
+}
+
 #shop-return-home{
     position: absolute;
     width: 25%;
@@ -162,7 +197,7 @@ html, body {
     font-family: 'Courier New', Courier, monospace;
 }
 
-#shop-category {
+.shop-category {
     position: relative;
     left: clamp(5px, 5vw, 20px);
 
@@ -180,6 +215,19 @@ html, body {
     background-color: white;
     border-radius: 10px;
     border: 3px solid rgb(124, 145, 190);
+    margin: clamp(2px, 2vw, 10px);
+}
+
+.inventory-item {
+    width: clamp(32px, 15vw, 100px);
+    height: clamp(32px, 15vw, 100px);
+
+    object-fit: contain;
+
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid rgb(124, 145, 190);
+    margin: clamp(2px, 2vw, 10px);
 }
 
 #title-page > img {
